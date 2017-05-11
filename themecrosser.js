@@ -4,7 +4,14 @@
       window.$=new$;
     }
     window.jQuery=new$;
-  })((function() {
-    
-  })())
+  })((function($) {
+    var classMap=[
+      //""
+    ]
+    $.fn.addClass=function(class) {
+      
+      this.addClass(class);
+    }
+    return $;
+  })(window.jQuery))
 })(this)
