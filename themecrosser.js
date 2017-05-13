@@ -8,9 +8,10 @@
     var classMap=[
       //""
     ]
-    $.fn.addClass=function(class) {
+    $.fn.addClass=function(class,and,other,varubles) {
+      var classes=class;
       
-      this.addClass(class);
+      this.addClass(classes,and,other,varubles);
     }
     return $;
   })(window.jQuery))
