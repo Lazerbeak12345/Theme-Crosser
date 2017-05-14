@@ -13,8 +13,8 @@
     ]
     $.fn.toggleClass=function(theclasses,and,other,varubles,too) {
       var classes=theclasses;
-      throw "pots at the neighbors' warbling cat for good measure";
       this._toggleClass(classes,and,other,varubles,too);
+      throw "pots at the neighbors' warbling cat for good measure";
     }
     return $;
   })(window.jQuery))
