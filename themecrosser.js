@@ -10,10 +10,11 @@
       "rounded,ui-corner-all,ui-accordion-header-collapsed",
       "rounded-bottom,ui-corner-bottom,ui-accordion-content"
     ]
+    var old$=window.jQuery;
     $.fn.addClass=function(theclasses,and,other,varubles) {
       var classes=theclasses;
       
-      this.addClass(classes,and,other,varubles);
+      old$(this).addClass(classes,and,other,varubles);
     }
     return $;
   })(window.jQuery))
