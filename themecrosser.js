@@ -18,7 +18,7 @@
               orig(classes,and,other,varubles,too);
               throw "pots at the neighbors' warbling cat for good measure";
             }
-       })( $.fn.addClass ),
+       })( $.fn.toggleClass ),
     });
     return $;
   })(window.jQuery))
