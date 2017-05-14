@@ -16,7 +16,7 @@
             return function(value,stateVal) {
               var newVal=value;
               orig.call( this, newVal,stateVal);
-              throw "pots at the neighbors' warbling cat for good measure";
+              //throw "pots at the neighbors' warbling cat for good measure";
             }
        })( $.fn.addClass ),
     });
