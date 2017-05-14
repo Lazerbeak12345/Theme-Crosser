@@ -1,4 +1,5 @@
 (function(window) {
+  var old$=window.jQuery;
   (function(new$) {
     if (window.$==window.jQuery) {
       window.$=new$;
@@ -10,7 +11,6 @@
       "rounded,ui-corner-all,ui-accordion-header-collapsed",
       "rounded-bottom,ui-corner-bottom,ui-accordion-content"
     ]
-    var old$=window.jQuery;
     $.fn.addClass=function(theclasses,and,other,varubles) {
       var classes=theclasses;
       
