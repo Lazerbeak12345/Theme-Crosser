@@ -12,13 +12,13 @@
       "rounded-bottom,ui-corner-bottom,ui-accordion-content"
     ]
     $.fn.extend({
-      toggleClass:( function( orig$ ) {
+      toggleClass:( function( orig   ) {
             return function(value,stateVal) {
               var newVal=value;
-              orig$(this).toggleClass(newVal,stateVal);
+              orig.call( this, newVal,stateVal);
               throw "pots at the neighbors' warbling cat for good measure";
             }
-       })( $ ),
+       })( $.fn.addClass ),
     });
     return $;
   })(window.jQuery))
