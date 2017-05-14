@@ -6,10 +6,12 @@
     window.jQuery=new$;
   })((function($) {
     var classMap=[
-      //""
+      "rounded-top,ui-corner-top,ui-accordion-header",
+      "rounded,ui-corner-all,ui-accordion-header-collapsed",
+      "rounded-bottom,ui-corner-bottom,ui-accordion-content"
     ]
-    $.fn.addClass=function(class,and,other,varubles) {
-      var classes=class;
+    $.fn.addClass=function(theclasses,and,other,varubles) {
+      var classes=theclasses;
       
       this.addClass(classes,and,other,varubles);
     }
