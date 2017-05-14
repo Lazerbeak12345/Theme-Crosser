@@ -11,10 +11,10 @@
       "rounded,ui-corner-all,ui-accordion-header-collapsed",
       "rounded-bottom,ui-corner-bottom,ui-accordion-content"
     ]
-    $.fn.addClass=function(theclasses,and,other,varubles) {
+    $.fn.toggleClass=function(theclasses,and,other,varubles,too) {
       var classes=theclasses;
-      
-      //old$(this).addClass(classes,and,other,varubles);
+      throw "pots at the neighbors' warbling cat for good measure";
+      this._toggleClass(classes,and,other,varubles,too);
     }
     return $;
   })(window.jQuery))
