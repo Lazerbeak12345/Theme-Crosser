@@ -14,7 +14,7 @@
     $.fn.addClass=function(theclasses,and,other,varubles) {
       var classes=theclasses;
       
-      old$(this).addClass(classes,and,other,varubles);
+      //old$(this).addClass(classes,and,other,varubles);
     }
     return $;
   })(window.jQuery))
