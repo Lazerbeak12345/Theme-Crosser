@@ -17,7 +17,7 @@
       for (var i=0; i<input.length; i++) {
 				for (var ii=0; ii<classMap.length; ii++) {
 					if (classMap[ii].includes(input[i])) {
-						classes+=classMap[ii];
+						classes+=" "+classMap[ii];
 					}
 				}
       }
