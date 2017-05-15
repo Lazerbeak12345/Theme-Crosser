@@ -7,10 +7,13 @@
     window.jQuery=new$;
   })((function($) {
     var classMap=[
-      "card ui-widget",
-      "rounded-top ui-corner-top ui-accordion-header",
-      "rounded ui-corner-all ui-accordion-header-collapsed",
-      "rounded-bottom ui-corner-bottom ui-accordion-content"
+		"card ui-widget",
+		"card-header ui-accordion-header",
+		"card-block ui-accordion-content",
+		
+		"rounded-top ui-corner-top ui-accordion-header",
+		"rounded ui-corner-all ui-accordion-header-collapsed",
+		"rounded-bottom ui-corner-bottom ui-accordion-content"
     ];
     function mod(classes) {
       var input=classes.split(/[\,\s]/g);
