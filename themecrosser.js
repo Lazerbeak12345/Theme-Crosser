@@ -19,8 +19,11 @@
       var input=classes.split(/[\,\s]/g);
       for (var i=0; i<input.length; i++) {
 				for (var ii=0; ii<classMap.length; ii++) {
-					if (classMap[ii].includes(input[i])) {
-						classes+=" "+classMap[ii];
+					var q=classMap[ii].split(/[\,\s]/g);
+					for (var iii=0; iii<q.length; iii++) {
+						if (q[iii]===input[i]) {
+							classes+=" "+classMap[ii];
+						}
 					}
 				}
       }
