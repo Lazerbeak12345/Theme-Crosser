@@ -7,12 +7,20 @@
     window.jQuery=new$;
   })((function($) {
     var classMap=[
-      "rounded-top,ui-corner-top,ui-accordion-header",
-      "rounded,ui-corner-all,ui-accordion-header-collapsed",
-      "rounded-bottom,ui-corner-bottom,ui-accordion-content"
+      "card ui-widget",
+      "rounded-top ui-corner-top ui-accordion-header",
+      "rounded ui-corner-all ui-accordion-header-collapsed",
+      "rounded-bottom ui-corner-bottom ui-accordion-content"
     ];
     function mod(classes) {
-      window.console.log(classes);
+      var input=classes.split(/[\,\s]/g);
+      for (var i=0; i<input.length; i++) {
+				for (var ii=0; ii<classMap.length; ii++) {
+					if (classMap[ii].includes(input[i])) {
+						classes+=classMap[ii];
+					}
+				}
+      }
       return classes;
     };
     //throw "pots at the neighbors' warbling cat for good measure";
