@@ -18,18 +18,18 @@
 		"btn ui-button",
 		
 		"sr-only ui-helper-hidden-accessible",
-    ];
+    ];// change to "class-name":"new classes"
     function mod(classes) {
       var input=classes.split(/[\,\s]/g);
       for (var i=0; i<input.length; i++) {
-				for (var ii=0; ii<classMap.length; ii++) {
-					var q=classMap[ii].split(/[\,\s]/g);
-					for (var iii=0; iii<q.length; iii++) {
-						if (q[iii]===input[i]) {
-							classes+=" "+classMap[ii];
-						}
+			for (var ii=0; ii<classMap.length; ii++) {
+				var q=classMap[ii].split(/[\,\s]/g);
+				for (var iii=0; iii<q.length; iii++) {
+					if (q[iii]===input[i]) {
+						classes+=" "+classMap[ii];
 					}
 				}
+			}
       }
       return classes;
     };
