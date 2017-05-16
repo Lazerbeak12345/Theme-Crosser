@@ -13,7 +13,9 @@
 		
 		"rounded-top ui-corner-top ui-accordion-header",
 		"rounded ui-corner-all ui-accordion-header-collapsed",
-		"rounded-bottom ui-corner-bottom ui-accordion-content"
+		"rounded-bottom ui-corner-bottom ui-accordion-content",
+		
+		"btn ui-button ui-corner-all",
     ];
     function mod(classes) {
       var input=classes.split(/[\,\s]/g);
