@@ -8,14 +8,16 @@
   })((function($) {
     var classMap=[
 		"card ui-widget",
-		"card-header ui-accordion-header",
-		"card-block ui-accordion-content",
+		"card-header ui-widget-header ui-accordion-header",
+		"card-block ui-widget-content ui-accordion-content",
 		
 		"rounded-top ui-corner-top ui-accordion-header",
 		"rounded ui-corner-all ui-accordion-header-collapsed",
 		"rounded-bottom ui-corner-bottom ui-accordion-content",
 		
-		"btn ui-button ui-corner-all",
+		"btn ui-button",
+		
+		"sr-only ui-helper-hidden-accessible",
     ];
     function mod(classes) {
       var input=classes.split(/[\,\s]/g);
