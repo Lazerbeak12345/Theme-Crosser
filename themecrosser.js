@@ -6,29 +6,46 @@
     }
     window.jQuery=new$;
   })((function($) {
-    var classMap=[
-		"card ui-widget",
-		"card-header ui-widget-header ui-accordion-header",
-		"card-block ui-widget-content ui-accordion-content",
-		
-		"rounded-top ui-corner-top ui-accordion-header",
-		"rounded ui-corner-all ui-accordion-header-collapsed",
-		"rounded-bottom ui-corner-bottom ui-accordion-content",
-		
-		"btn ui-button",
-		
-		"sr-only ui-helper-hidden-accessible",
-    ];// change to "class-name":"new classes"
+    var classMap={
+		//Widget-card
+			"ui-widget":"card",
+			"ui-widget-header":"card-header",
+			"ui-widget-content":"card-block",
+
+			"card":"ui-widget",
+			"card-header":"ui-widget-header"
+			"card-block":"ui-widget-content",
+		//sr
+			"ui-helper-hidden-accessible":"sr-only",
+			
+			"sr-only":"ui-helper-hidden-accessible",
+		//corners
+			"ui-corner-all":"rounded",
+			"ui-corner-top":"rounded-top",
+			"ui-corner-bottom":"rounded-bottom",
+			"ui-corner-left":"rounded-left",
+			"ui-corner-right":"rounded-right",
+
+			"rounded":"ui-corner-all",
+			"rounded-top":"ui-corner-top",
+			"rounded-bottom":"ui-corner-bottom",
+			"rounded-left":"ui-corner-left",
+			"rounded-right":"ui-corner-right",
+		//accordion
+			"ui-accordion-header":"card-header",
+			"ui-accordion-header-collapsed":"rounded",
+			"ui-accordion-content":"card-block",
+		//btn
+			"btn":"ui-button",
+			
+			"ui-button":"btn",
+	};// change to "class-name":"new classes"
     function mod(classes) {
       var input=classes.split(/[\,\s]/g);
       for (var i=0; i<input.length; i++) {
-			for (var ii=0; ii<classMap.length; ii++) {
-				var q=classMap[ii].split(/[\,\s]/g);
-				for (var iii=0; iii<q.length; iii++) {
-					if (q[iii]===input[i]) {
-						classes+=" "+classMap[ii];
-					}
-				}
+		  	for (var ii in classMap) {
+				var q=ii.split(/[\,\s]/g);
+				//???????
 			}
       }
       return classes;
