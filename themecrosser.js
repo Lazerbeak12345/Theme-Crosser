@@ -13,7 +13,7 @@
 			"ui-widget-content":"card-block",
 
 			"card":"ui-widget",
-			"card-header":"ui-widget-header"
+			"card-header":"ui-widget-header",
 			"card-block":"ui-widget-content",
 		//sr
 			"ui-helper-hidden-accessible":"sr-only",
