@@ -45,7 +45,9 @@
       for (var i=0; i<input.length; i++) {
 		  	for (var ii in classMap) {
 				var q=ii.split(/[\,\s]/g);
-				//???????
+				for (var iii=0; iii<q.length; iii++) {
+					
+				}
 			}
       }
       return classes;
