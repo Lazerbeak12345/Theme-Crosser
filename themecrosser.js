@@ -46,7 +46,7 @@
 		  	for (var ii in classMap) {
 				var q=ii.split(/[\,\s]/g);
 				for (var iii=0; iii<q.length; iii++) {
-					if (input===q[iii]) {
+					if (input[i]===q[iii]) {
 						classes+=" "+classMap[ii];
 					}
 				}
