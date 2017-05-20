@@ -7,6 +7,18 @@
     window.jQuery=new$;
   })((function($) {
     var classMap={
+	    //btn
+			"btn":"ui-button",
+			"btn&btn-primary":"ui-button .ui-priority-primary",
+			"btn&btn-secondary":"ui-button .ui-priority-secondary",
+			"btn&btn-warning":"ui-button .ui-state-highlight",
+			"btn&btn-danger":"ui-button .ui-state-error",
+			
+			"ui-button":"btn",
+			"ui-button&.ui-state-highlight":"btn btn-warning",
+			"ui-button&.ui-state-error":"btn btn-danger",
+			"ui-button&.ui-priority-primary":"btn btn-primary",
+			"ui-button&.ui-priority-secondary":"btn btn-secondary",
 		//Widget-card
 			"ui-widget":"card",
 			"ui-widget-header":"card-header",
@@ -35,10 +47,6 @@
 			"ui-accordion-header":"card-header",
 			"ui-accordion-header-collapsed":"rounded",
 			"ui-accordion-content":"card-block",
-		//btn
-			"btn":"ui-button",
-			
-			"ui-button":"btn",
 	};// change to "class-name":"new classes"
     function mod(classes) {
 		for (var ii in classMap) {
