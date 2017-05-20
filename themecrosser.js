@@ -54,7 +54,7 @@
 						}
 					}
 				}
-				if (total=qq.length) {
+				if (total===qq.length) {
 					classes+=" "+classMap[ii];
 				}
 			}
