@@ -41,17 +41,24 @@
 			"ui-button":"btn",
 	};// change to "class-name":"new classes"
     function mod(classes) {
-      var input=classes.split(/[\,\s]/g);
-      for (var i=0; i<input.length; i++) {
-		  	for (var ii in classMap) {
-				var q=ii.split(/[\,\s]/g);
-				for (var iii=0; iii<q.length; iii++) {
-					if (input[i]===q[iii]) {
-						classes+=" "+classMap[ii];
+		for (var ii in classMap) {
+			var q=ii.split(/[\,\s]/g);
+			for (var iii=0; iii<q.length; iii++) {
+				var qq=q[iii].split(/&/g),
+					total=0;
+				for (var iiii=0; iiii<qq.length; iiii++) {
+					var input=classes.split(/[\,\s]/g);
+					for (var i=0; i<input.length; i++) {
+						if (input[i]===q[iiii]) {
+							total++;
+						}
 					}
 				}
+				if (total=qq.length) {
+					classes+=" "+classMap[ii];
+				}
 			}
-      }
+      	}
       return classes;
     };
     //throw "pots at the neighbors' warbling cat for good measure";
