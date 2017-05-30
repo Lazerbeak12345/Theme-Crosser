@@ -75,7 +75,7 @@
 			}
       	}
 		for (i=0; i<rlist.length; i++) {
-			var item=rlist.split(/[\,\s]/g);
+			var item=rlist[i].split(/[\,\s]/g);
 			for (ii=0; ii<item.length; ii++) {
 				classes.replace(item[ii],"");
 			}
