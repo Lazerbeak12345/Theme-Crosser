@@ -68,35 +68,35 @@
 			}
       	}
       return classes;
-    };
+    }
     //throw "pots at the neighbors' warbling cat for good measure";
     $.fn.extend({
       toggleClass:( function( orig ) {
             return function(value,$switch,duration,easing,complete) {
               var newVal=mod(value);
               orig.call( this, newVal,$switch,duration,easing,complete);
-            }
+            };
        })( $.fn.toggleClass ),
       addClass:( function( orig ) {
             return function(value,duration,easing,complete) {
               var newVal=mod(value);
               orig.call( this, newVal,duration,easing,complete);
-            }
+            };
        })( $.fn.addClass ),
       removeClass:( function( orig ) {
             return function(value,duration,easing,complete) {
               var newVal=mod(value);
               orig.call( this, newVal,duration,easing,complete);
-            }
+            };
        })( $.fn.removeClass ),
       switchClass:( function( orig ) {
             return function(value1,value2,duration,easing,complete) {
               var newVal1=mod(value1),
                   newVal2=mod(value2);
               orig.call( this, newVal1,newVal2,duration,easing,complete);
-            }
+            };
        })( $.fn.switchClass ),
     });
     return $;
   })(window.jQuery))
-})(this)
+})(this);
