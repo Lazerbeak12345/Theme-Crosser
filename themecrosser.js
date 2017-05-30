@@ -14,7 +14,7 @@
 			"btn&btn-warning":"ui-button .ui-state-highlight",
 			"btn&btn-danger":"ui-button .ui-state-error",
 			
-			"ui-button":"btn",
+			"ui-button":"btn!card",
 			"ui-button&.ui-state-highlight":"btn btn-warning",
 			"ui-button&.ui-state-error":"btn btn-danger",
 			"ui-button&.ui-priority-primary":"btn btn-primary",
@@ -47,8 +47,9 @@
 			"ui-accordion-header":"card-header",
 			"ui-accordion-header-collapsed":"rounded",
 			"ui-accordion-content":"card-block",
-	};// change to "class-name":"new classes"
+	};//"class-name&and-others or-others":"new classes!remove"
     function mod(classes) {
+		var rlist=[];
 		for (var ii in classMap) {
 			var q=ii.split(/[\,\s]/g);
 			for (var iii=0; iii<q.length; iii++) {
@@ -63,11 +64,21 @@
 					}
 				}
 				if (total===qq.length) {
-					classes+=" "+classMap[ii];
+					var thing=classMap[ii].split("!");
+					classes+=" "+thing[0];
+					if (thing.length>1) {
+						rlist.push(thing[1]);
+					}
 				}
 			}
       	}
-      return classes;
+		for (var i=0; i<rlist.length; i++) {
+			var item=rlist.split(/[\,\s]/g);
+			for (var ii=0; ii<item.length; ii++) {
+				classes.replace(item[ii],"");
+			}
+		}
+    	return classes;
     }
     //throw "pots at the neighbors' warbling cat for good measure";
     $.fn.extend({
