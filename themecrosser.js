@@ -49,15 +49,17 @@
 			"ui-accordion-content":"card-block",
 	};//"class-name&and-others or-others":"new classes!remove"
     function mod(classes) {
-		var rlist=[];
-		for (var ii in classMap) {
+	    	var i,
+		    ii,
+		    rlist=[];
+		for (ii in classMap) {
 			var q=ii.split(/[\,\s]/g);
 			for (var iii=0; iii<q.length; iii++) {
 				var qq=q[iii].split(/&/g),
 					total=0;
 				for (var iiii=0; iiii<qq.length; iiii++) {
 					var input=classes.split(/[\,\s]/g);
-					for (var i=0; i<input.length; i++) {
+					for (i=0; i<input.length; i++) {
 						if (input[i]===q[iiii]) {
 							total++;
 						}
@@ -72,9 +74,9 @@
 				}
 			}
       	}
-		for (var i=0; i<rlist.length; i++) {
+		for (i=0; i<rlist.length; i++) {
 			var item=rlist.split(/[\,\s]/g);
-			for (var ii=0; ii<item.length; ii++) {
+			for (ii=0; ii<item.length; ii++) {
 				classes.replace(item[ii],"");
 			}
 		}
