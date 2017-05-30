@@ -98,5 +98,5 @@
        })( $.fn.switchClass ),
     });
     return $;
-  })(window.jQuery))
+  })(window.jQuery));
 })(this);
