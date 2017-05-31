@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('Mod-function test', 'Tests if the internal mod function is working properly', function() {
 		var inpt="ui-button ui-corner-all ui-widget",
 			out=mod(inpt),
-			expectedOut="ui-button ui-corner-all ui-widget btn rounded",
+			expectedOut="ui-button ui-corner-all ui-widget btn rounde",
 			tot=0;
 		grunt.log.writeln(inpt);//-----------------------------
 		if (out==expectedOut) return;
