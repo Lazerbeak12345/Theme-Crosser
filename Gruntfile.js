@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 				tot++;
 			}
 		}
-		for (var i=0;i<expectedOut.length;i++) {
+		for (i=0;i<expectedOut.length;i++) {
 			if (out.includes(expectedOut[i])) {
 				tot++;
 			}
