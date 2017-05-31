@@ -2,7 +2,6 @@
   var old$=window.jQuery||{};
   (function(new$) {
 	if (typeof module!="undefined") {
-		module.exports=mod;
 		return;
 	}
 	if (window.$==window.jQuery) {
