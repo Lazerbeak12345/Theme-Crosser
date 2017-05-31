@@ -1,15 +1,14 @@
 (function(window) {
-  var old$=window.jQuery,
-	  mod;
+  var old$=window.jQuery||{};
   (function(new$) {
 	if (typeof module!="undefined") {
 		module.exports=mod;
-	}else{
-    	if (window.$==window.jQuery) {
-      		window.$=new$;
-    	}
-    	window.jQuery=new$;
+		return;
 	}
+	if (window.$==window.jQuery) {
+		window.$=new$;
+	}
+	window.jQuery=new$;
   })((function($) {
     var classMap={
 	    //btn
@@ -53,7 +52,7 @@
 			"ui-accordion-header-collapsed":"rounded",
 			"ui-accordion-content":"card-block",
 	};//"class-name&and-others or-others":"new classes!remove"
-    mod=function(classes) {
+    function mod(classes) {
 	    	var i,
 		    ii,
 		    rlist=[];
@@ -85,6 +84,10 @@
 		}
     	return classes;
     }
+	if (typeof module!="undefined") {
+		module.exports=mod;
+		return function() {};
+	}
     $.fn.extend({
       toggleClass:( function( orig ) {
             return function(value,$switch,duration,easing,complete) {
