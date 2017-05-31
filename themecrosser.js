@@ -1,10 +1,15 @@
 (function(window) {
-  var old$=window.jQuery;
+  var old$=window.jQuery,
+	  mod;
   (function(new$) {
-    if (window.$==window.jQuery) {
-      window.$=new$;
-    }
-    window.jQuery=new$;
+	if (typeof module!="undefined") {
+		module.exports=mod;
+	}else{
+    	if (window.$==window.jQuery) {
+      		window.$=new$;
+    	}
+    	window.jQuery=new$;
+	}
   })((function($) {
     var classMap={
 	    //btn
@@ -48,7 +53,7 @@
 			"ui-accordion-header-collapsed":"rounded",
 			"ui-accordion-content":"card-block",
 	};//"class-name&and-others or-others":"new classes!remove"
-    function mod(classes) {
+    mod=function(classes) {
 	    	var i,
 		    ii,
 		    rlist=[];
