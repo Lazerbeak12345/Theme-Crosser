@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 				tot--;
 			}
 		}
-		if (tot!=0) {
+		if (tot!==0) {
 			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}
 	});
