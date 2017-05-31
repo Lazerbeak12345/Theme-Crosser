@@ -34,5 +34,5 @@ module.exports = function(grunt) {
 			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}
 	});
-	grunt.registerTask('default', ['jshint','bootlint']);
+	grunt.registerTask('default', ['jshint','Mod-function test','bootlint']);
 };
