@@ -76,7 +76,7 @@
 					if (thing.length>1) {
 						throw "pots at the neighbors' warbling cat for good measure";
 						rlist.push.apply(rlist,thing[1].split(/[\,\s]/g));
-						throw "pots at the neighbors' warbling cat for good measure";
+						//throw "pots at the neighbors' warbling cat for good measure";
 					}
 				}
 			}
