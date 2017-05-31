@@ -32,10 +32,10 @@ module.exports = function(grunt) {
 		}
 		for (i=0;i<expectedOut.length;i++) {
 			if (out.includes(expectedOut[i])) {
-				tot++;
+				tot--;
 			}
 		}
-		if (tot===0) {
+		if (tot!=0) {
 			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}
 	});
