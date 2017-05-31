@@ -20,8 +20,7 @@ module.exports = function(grunt) {
 			out=mod(inpt),
 			expectedOut="ui-button ui-corner-all ui-widget btn rounded",
 			tot=0;
-		grunt.log.writeln(inpt);
-		grunt.log.writeln(out);
+		grunt.log.writeln(inpt);//-----------------------------
 		if (out==expectedOut) return;
 		out=out.split(/[\,\s]/g);
 		expectedOut=expectedOut.split(/[\,\s]/g);
@@ -35,8 +34,12 @@ module.exports = function(grunt) {
 				tot--;
 			}
 		}
-		if (tot!==0) {
-			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
+		if (tot!==0) {//---------------------------------------
+			grunt.writeln(out)
+			.warn("Output didn't match what was expected",1);//may want to change the error code later
+		}else{
+			grunt.log.write(out)
+			.ok();
 		}
 	});
 	grunt.registerTask('default', ['jshint','Mod-function test','bootlint']);
