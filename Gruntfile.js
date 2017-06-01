@@ -42,5 +42,5 @@ module.exports = function(grunt) {
 			.ok();
 		}
 	});
-	grunt.registerTask('default', ['jshint','Mod-function test','bootlint']);
+	grunt.registerTask('default', ['jshint','Mod-function-test','bootlint']);
 };
