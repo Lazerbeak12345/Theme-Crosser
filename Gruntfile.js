@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 	});	
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-bootlint');
-	grunt.registerTask('Mod-function test', 'Tests if the internal mod function is working properly', function() {
+	grunt.registerTask('Mod-function-test', 'Tests if the internal mod function is working properly', function() {
 		var inpt="ui-button ui-corner-all ui-widget",
 			out=mod(inpt),
 			expectedOut="ui-button ui-corner-all ui-widget btn rounded",
