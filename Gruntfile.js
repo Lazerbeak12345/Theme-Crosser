@@ -49,5 +49,5 @@ module.exports = function(grunt) {
     grunt.log.writeln(this.name + ", " + arg1 + " " + arg2);
   }
 });
-	grunt.registerTask('default', ['jshint','Mod-function-test','bootlint']);
+	grunt.registerTask('default', ['foo','jshint','Mod-function-test','bootlint']);
 };
