@@ -27,10 +27,12 @@ module.exports = function(grunt) {
 		try {
 			out=mod(inpt);
 		}catch(e) {
-			if (typeof (new Error("err").stack)!="undefined") {
-				grunt.fail.fatal(e.stack,1);//may want to change the error code later
-			}else{
-				grunt.fail.fatal(e.toString(),1);//may want to change the error code later
+			if (typeof e!="undefined"&&typeof e.message!="undefined") {
+				if (typeof (new Error("err").stack)!="undefined") {
+					grunt.fail.fatal(e.stack,1);//may want to change the error code later
+				}else{
+					grunt.fail.fatal(e.toString(),1);//may want to change the error code later
+				}
 			}
 		}
 		
