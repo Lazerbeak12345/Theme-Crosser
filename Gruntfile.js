@@ -28,9 +28,9 @@ module.exports = function(grunt) {
 			out=mod(inpt);
 		}catch(e) {
 			if (typeof (new Error("err").stack)!="undefined") {
-				grunt.log.fatal(e.stack,1);//may want to change the error code later
+				grunt.fail.fatal(e.stack,1);//may want to change the error code later
 			}else{
-				grunt.log.fatal(e.toString(),1);//may want to change the error code later
+				grunt.fail.fatal(e.toString(),1);//may want to change the error code later
 			}
 		}
 		
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		}
 		if (tot!==0) {//---------------------------------------
 			grunt.log.writeln(out);
-			grunt.log.warn("Output didn't match what was expected",1);//may want to change the error code later
+			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}else{
 			grunt.log.write(out);
 			grunt.log.ok();
