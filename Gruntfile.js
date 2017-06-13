@@ -15,13 +15,30 @@ module.exports = function(grunt) {
 	});	
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-bootlint');
-	grunt.registerTask('Mod-function-test', 'Tests if the internal mod function is working properly', function() {
-		var inpt="ui-button ui-corner-all ui-widget",
-			out=mod(inpt),
-			expectedOut="ui-button ui-corner-all ui-widget btn rounded",
-			tot=0;
-		grunt.log.writeln(inpt);//-----------------------------
-		if (out==expectedOut) return;
+	grunt.task.registerTask('mod-test', 'Tests if the internal mod function is working properly.', function(arg1, arg2) {
+		
+		var inpt="ui-button ui-corner-all ui-widget";
+		var out="";
+		var expectedOut="ui-button ui-corner-all ui-widget btn rounded";
+		var tot=0;
+		
+		grunt.log.writeln(inpt);
+		
+		try {
+			out=mod(inpt);
+		}catch(e) {
+			if (typeof (new Error("err").stack)!="undefined") {
+				grunt.log.fatal(e.stack,1);//may want to change the error code later
+			}else{
+				grunt.log.fatal(e.toString(),1);//may want to change the error code later
+			}
+		}
+		
+		if (out===expectedOut) {
+			grunt.log.write(out);
+			grunt.log.ok();
+			return;
+		}		
 		out=out.split(/[\,\s]/g);
 		expectedOut=expectedOut.split(/[\,\s]/g);
 		for (var i=0;i<out.length;i++) {
@@ -35,19 +52,12 @@ module.exports = function(grunt) {
 			}
 		}
 		if (tot!==0) {//---------------------------------------
-			grunt.writeln(out)
-			.warn("Output didn't match what was expected",1);//may want to change the error code later
+			grunt.log.writeln(out);
+			grunt.log.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}else{
-			grunt.log.write(out)
-			.ok();
+			grunt.log.write(out);
+			grunt.log.ok();
 		}
 	});
-	grunt.task.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2) {
-  if (arguments.length === 0) {
-    grunt.log.writeln(this.name + ", no args");
-  } else {
-    grunt.log.writeln(this.name + ", " + arg1 + " " + arg2);
-  }
-});
-	grunt.registerTask('default', ['foo','jshint','Mod-function-test','bootlint']);
+	grunt.registerTask('default', ['jshint','mod-test','bootlint']);
 };
