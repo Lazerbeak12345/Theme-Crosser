@@ -1,10 +1,10 @@
 (function(window) {
-  var old$=window.jQuery;
+  var old$=window.jQuery||{};
   (function(new$) {
-    if (window.$==window.jQuery) {
-      window.$=new$;
-    }
-    window.jQuery=new$;
+	if (window.$==window.jQuery) {
+		window.$=new$;
+	}
+	window.jQuery=new$;
   })((function($) {
     var classMap={
 	    //btn
@@ -69,20 +69,17 @@
 					var thing=classMap[ii].split("!");
 					classes+=" "+thing[0];
 					if (thing.length>1) {
-						rlist.push(thing[1]);
+						rlist.push.apply(rlist,thing[1].split(/[\,\s]/g));
+						throw "pots at the neighbors' warbling cat for good measure";
 					}
 				}
 			}
       	}
 		for (i=0; i<rlist.length; i++) {
-			var item=rlist[i].split(/[\,\s]/g);
-			for (ii=0; ii<item.length; ii++) {
-				classes.replace(item[ii],"");
-			}
+			classes.replace(rlist[i],"");
 		}
     	return classes;
     }
-    //throw "pots at the neighbors' warbling cat for good measure";
     $.fn.extend({
       toggleClass:( function( orig ) {
             return function(value,$switch,duration,easing,complete) {
