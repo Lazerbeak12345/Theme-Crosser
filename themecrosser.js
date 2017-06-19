@@ -51,14 +51,15 @@
     function mod(classes) {
 	    	var i,
 		    ii,
-		    rlist=[];
+		    rlist=[],
+			nClasses=classes.toString();
 		for (ii in classMap) {
 			var q=ii.split(/[\,\s]/g);
 			for (var iii=0; iii<q.length; iii++) {
 				var qq=q[iii].split(/&/g),
 					total=0;
 				for (var iiii=0; iiii<qq.length; iiii++) {
-					var input=classes.split(/[\,\s]/g);
+					var input=nClasses.split(/[\,\s]/g);
 					for (i=0; i<input.length; i++) {
 						if (input[i]===q[iiii]) {
 							total++;
@@ -67,18 +68,17 @@
 				}
 				if (total===qq.length) {
 					var thing=classMap[ii].split("!");
-					classes+=" "+thing[0];
+					nClasses+=" "+thing[0];
 					if (thing.length>1) {
 						rlist.push.apply(rlist,thing[1].split(/[\,\s]/g));
-						//throw "pots at the neighbors' warbling cat for good measure";
 					}
 				}
 			}
       	}
 		for (i=0; i<rlist.length; i++) {
-			classes.replace(rlist[i],"");
+			nClasses.replace(rlist[i],"");
 		}
-    	return classes;
+    	return nClasses;
     }
     $.fn.extend({
       toggleClass:( function( orig ) {
