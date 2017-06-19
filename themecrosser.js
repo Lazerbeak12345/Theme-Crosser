@@ -48,18 +48,26 @@
 			"ui-accordion-header-collapsed":"rounded",
 			"ui-accordion-content":"card-block",
 	};//"class-name&and-others or-others":"new classes!remove"
+	function uniqueArray(names) {
+		//var names = ["Mike","Matt","Nancy","Adam","Jenny","Nancy","Carl"];
+		var uniqueNames = [];
+		$.each(names, function(i, el){
+			if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+		});
+		return uniqueNames;
+	}
     function mod(classes) {
 	    	var i,
 		    ii,
 		    rlist=[],
 			nClasses=classes.toString();
 		for (ii in classMap) {
-			var q=ii.split(/[\,\s]/g);
+			var q=uniqueArray(ii.split(/[\,\s]/g));
 			for (var iii=0; iii<q.length; iii++) {
-				var qq=q[iii].split(/&/g),
+				var qq=uniqueArray(q[iii].split(/&/g)),
 					total=0;
 				for (var iiii=0; iiii<qq.length; iiii++) {
-					var input=nClasses.split(/[\,\s]/g);
+					var input=uniqueArray(nClasses.split(/[\,\s]/g));
 					for (i=0; i<input.length; i++) {
 						if (input[i]===q[iiii]) {
 							total++;
@@ -67,14 +75,15 @@
 					}
 				}
 				if (total===qq.length) {
-					var thing=classMap[ii].split("!");
+					var thing=classMap[ii].split("!");//does not need to be linted by uniqueArray()
 					nClasses+=" "+thing[0];
 					if (thing.length>1) {
-						rlist.push.apply(rlist,thing[1].split(/[\,\s]/g));
+						rlist.push.apply(rlist,uniqueArray(thing[1].split(/[\,\s]/g)));
 					}
 				}
 			}
       	}
+		rlist=uniqueArray(rlist);
 		for (i=0; i<rlist.length; i++) {
 			nClasses.replace(rlist[i],"");
 		}
