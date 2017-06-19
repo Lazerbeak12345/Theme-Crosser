@@ -37,12 +37,17 @@ module.exports = function(grunt) {
 		}
 		
 		if (out===expectedOut) {
-			grunt.log.write(out);
-			grunt.log.ok();
+			grunt.log.write(out).ok();
 			return;
 		}		
 		out=out.split(/[\,\s]/g);
 		expectedOut=expectedOut.split(/[\,\s]/g);
+		if (!String.prototype.includes) {
+			String.prototype.includes = function() {
+				'use strict';
+				return String.prototype.indexOf.apply(this, arguments) !== -1;
+			};
+		}//monkey patch
 		for (var i=0;i<out.length;i++) {
 			if (expectedOut.includes(out[i])) {
 				tot++;
@@ -57,8 +62,7 @@ module.exports = function(grunt) {
 			grunt.log.writeln(out);
 			grunt.fail.warn("Output didn't match what was expected",1);//may want to change the error code later
 		}else{
-			grunt.log.write(out);
-			grunt.log.ok();
+			grunt.log.write(out).ok();
 		}
 	});
 	grunt.registerTask('default', ['jshint','mod-test','bootlint']);
