@@ -1,9 +1,6 @@
 (function(window) {
   var old$=window.jQuery||{};
   (function(new$) {
-	if (typeof module!="undefined") {
-		return;
-	}
 	if (window.$==window.jQuery) {
 		window.$=new$;
 	}
@@ -83,10 +80,6 @@
 		}
     	return classes;
     }
-	if (typeof module!="undefined") {
-		module.exports=mod;
-		return function() {};
-	}
     $.fn.extend({
       toggleClass:( function( orig ) {
             return function(value,$switch,duration,easing,complete) {
