@@ -1,5 +1,3 @@
-var mod=require("./themecrosser.js");
-
 module.exports = function(grunt) {
 	grunt.initConfig({
 		jshint: {
