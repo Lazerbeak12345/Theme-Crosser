@@ -85,7 +85,7 @@
       	}
 		rlist=uniqueArray(rlist);
 		for (i=0; i<rlist.length; i++) {
-			nClasses.replace(rlist[i],"");
+			nClasses=nClasses.replace(new RegExp(rlist[i], "g"),"");//"g" is the global flag for dynamic regexps
 		}
     	return nClasses;
     }
