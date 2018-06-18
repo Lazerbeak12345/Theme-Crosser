@@ -7,8 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link id="theme" rel="stylesheet" href="https://cdn.rawgit.com/thomaspark/bootswatch/v4/flatly/bootstrap.min.css" integrity="sha384-mLoAoVVKI5Ylfekhi0wRovakSfJXZJd/4G/hFADK5cB5L6R2JYjur4rRdGS9czwd" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link id="theme" rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<title>Theme-crosser</title>
 	</head>
@@ -45,6 +45,26 @@
 		<h2 id="autocomplete-link"><a href="#autocomplete">Autocomplete</a></h2>
 		<h2 id="button-link"><a href="#button">Button</a></h2>
 		<button type="button" id="button">Button label</button>
+		<h2 id="checkboxradio-link"><a href="#radio-1">Checkboxradio</a></h2>
+		<label for="radio-1">New York</label>
+		<input type="radio" name="radio-1" id="radio-1" class="checkboxradio">
+		<label for="radio-2">Paris</label>
+		<input type="radio" name="radio-1" id="radio-2" class="checkboxradio">
+		<label for="radio-3">London</label>
+		<input type="radio" name="radio-1" id="radio-3" class="checkboxradio">
+		<h2 id="controlgroup-link"><a href="#controlgroup">Controlgroup</a></h2>
+		<div id="controlgroup">
+		  <input type="radio" id="sizzle" name="project">
+		  <label for="sizzle">Sizzle</label>
+	 
+		  <input type="radio" id="qunit" name="project" checked="checked">
+		  <label for="qunit">QUnit</label>
+	 
+		  <input type="radio" id="color" name="project">
+		  <label for="color">Color</label>
+		</div>
+		<h2 id="datepicker-link"><a href="#datepicker">Datepicker</a></h2>
+		<!--div id="datepicker"></div><!---->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 		<script src="themecrosser.js"></script>
 		<!--jQuery extention(s) would go here-->
@@ -62,6 +82,17 @@
 			
 			//button
 			$( "#button" ).button();
+			
+			
+			//checkbox radio
+			$( ".checkboxradio" ).checkboxradio();
+			
+			
+			//buttonset
+			$( "#controlgroup" ).buttonset();
+			
+			//datepicker
+			//$( "#datepicker" ).datepicker();
 		</script>
 	</body>
 </html>
