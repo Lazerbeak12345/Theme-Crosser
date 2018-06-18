@@ -6,7 +6,7 @@
 	}
 	window.jQuery=new$;
   })((function($) {
-	$.themecrosser={}
+	$.themecrosser={};
 	$.themecrosser.mode="jQuery UI to Bootstrap";
 	$.themecrosser.classMap={
 		"Bootstrap to jQuery UI":{
