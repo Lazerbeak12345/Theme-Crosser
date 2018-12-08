@@ -9,12 +9,60 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<link id="theme" rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 		<title>Theme-crosser</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script src="themecrosser.js"></script>
+		<!--jQuery extention(s) would go here-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+		<!--jQuery-ui extention(s) would go here-->
+		<script>//logic of page here
+			$(function () {
+				//accordion
+				$( "#accordion" ).accordion();
+				
+				//autocomplete
+				$( "#autocomplete" ).autocomplete({
+					source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
+				});
+				
+				//button
+				$( "#button" ).button();
+				
+				
+				//checkbox radio
+				$( ".checkboxradio" ).checkboxradio();
+				
+				
+				//buttonset
+				$( "#controlgroup" ).buttonset();
+				
+				//datepicker
+				//$( "#datepicker" ).datepicker();
+				
+				//dialog
+				$( "#dialog" ).dialog({
+					autoOpen: false,
+					buttons: [
+						{
+							text: "OK",
+							click: function() {
+								$( this ).dialog( "close" );
+							}
+						}
+					]
+				});
+				$( "#dialog-opener" ).button().click(function() {
+					$( "#dialog" ).dialog( "open" );
+				});
+				
+				//menu
+				$( "#menu" ).menu();
+			});
+		</script>
 	</head>
 	<body>
 		<h1><i>Theme Crosser</i></h1>
-		
 		<h2 id="accordion-link"><a href="#accordion">Accordion</a></h2>
 		<div id="accordion">
 		  <h3>Section 1</h3>
@@ -43,6 +91,8 @@
 		</div>
 		<br/>
 		<h2 id="autocomplete-link"><a href="#autocomplete">Autocomplete</a></h2>
+		<label for="autocomplete">Select a programming language: </label>
+		<input id="autocomplete">
 		<h2 id="button-link"><a href="#button">Button</a></h2>
 		<button type="button" id="button">Button label</button>
 		<h2 id="checkboxradio-link"><a href="#radio-1">Checkboxradio</a></h2>
@@ -54,45 +104,57 @@
 		<input type="radio" name="radio-1" id="radio-3" class="checkboxradio">
 		<h2 id="controlgroup-link"><a href="#controlgroup">Controlgroup</a></h2>
 		<div id="controlgroup">
-		  <input type="radio" id="sizzle" name="project">
-		  <label for="sizzle">Sizzle</label>
-	 
-		  <input type="radio" id="qunit" name="project" checked="checked">
-		  <label for="qunit">QUnit</label>
-	 
-		  <input type="radio" id="color" name="project">
-		  <label for="color">Color</label>
+			<input type="radio" id="sizzle" name="project">
+			<label for="sizzle">Sizzle</label>
+			<input type="radio" id="qunit" name="project" checked="checked">
+			<label for="qunit">QUnit</label>
+			<input type="radio" id="color" name="project">
+			<label for="color">Color</label>
 		</div>
 		<h2 id="datepicker-link"><a href="#datepicker">Datepicker</a></h2>
-		<!--div id="datepicker"></div><!---->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		<script src="themecrosser.js"></script>
-		<!--jQuery extention(s) would go here-->
-		<!--Recommended for bootstrap--><script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js" integrity="sha256-jVfFb7AbGi7S/SLNl8SB4/MYaf549eEs+NlIWMoARHg=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.js" integrity="sha256-O80B9+k8kADyLffStFEQZnTxAU91ZryGbUeKwxO0t3M=" crossorigin="anonymous"></script>
-		<!-- Bootstrap JS extention(s) would go here-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
-		<!--jQuery-ui extention(s) would go here-->
-		<script>/*Modify jquery functions here so you are only using the ones that you want to use*/</script>
-		<script>//logic of page here
-			//accordion
-			$( "#accordion" ).accordion();
-			
-			//autocomplete
-			
-			//button
-			$( "#button" ).button();
-			
-			
-			//checkbox radio
-			$( ".checkboxradio" ).checkboxradio();
-			
-			
-			//buttonset
-			$( "#controlgroup" ).buttonset();
-			
-			//datepicker
-			//$( "#datepicker" ).datepicker();
-		</script>
+		<div id="datepicker"></div>
+		<h2 id="dialog-link"><a href="#dialog">Dialog</a></h2>
+		<button id="dialog-opener">open the dialog</button>
+		<div id="dialog" title="Dialog Title">I'm a dialog</div>
+		<h2 id="menu-link"><a href="#menu">Menu</a></h2>
+		<ul id="menu">
+			<li>
+				<div>Item 1</div>
+			</li>
+			<li>
+				<div>Item 2</div>
+			</li>
+			<li>
+				<div>Item 3</div>
+				<ul>
+					<li>
+						<div>Item 3-1</div>
+					</li>
+					<li>
+						<div>Item 3-2</div>
+						<ul>
+							<li>
+								<div>Item 3-2-1</div>
+							</li>
+							<li>
+								<div>Item 3-2-2</div>
+							</li>
+							<li>
+								<div>Item 3-2-3</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<div>Item 3-3</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div>Item 4</div>
+			</li>
+			<li>
+				<div>Item 5</div>
+			</li>
+		</ul>
 	</body>
 </html>
