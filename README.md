@@ -7,4 +7,4 @@ Lets you use bootstrap themes with jquery-ui
 
 Master | Develop
 --- | ---
-[![Travis](https://travis-ci.org/Lazerbeak12345/Theme-Crosser.svg?branch=master)](https://travis-ci.org/Lazerbeak12345/Theme-Crosser) | [![Travis branch](https://travis-ci.org/Lazerbeak12345/Theme-Crosser.svg?branch=develop)](https://travis-ci.org/Lazerbeak12345/Theme-Crosser.js)
+[![Travis](https://travis-ci.org/Lazerbeak12345/Theme-Crosser.svg?branch=master)](https://travis-ci.org/Lazerbeak12345/Theme-Crosser) | [![Travis branch](https://travis-ci.org/Lazerbeak12345/Theme-Crosser.svg?branch=develop)](https://travis-ci.org/Lazerbeak12345/Theme-Crosser)
