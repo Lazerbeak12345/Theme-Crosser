@@ -138,7 +138,7 @@
 				return function(value,duration,easing,complete) {
 				orig.call( this, mod(value),duration,easing,complete);
 				};
-		})( $.fn.removeClass ),
+			})( $.fn.removeClass ),
 			/*
 			switchClass:( function( orig ) {
 				return function(value1,value2,duration,easing,complete) {
